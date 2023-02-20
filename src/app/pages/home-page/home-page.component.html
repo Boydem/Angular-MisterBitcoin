@@ -1,0 +1,11 @@
+<section class="user">
+  <p><label>Username:</label> {{ user?.name }} |</p>
+  <p><label>Balance:</label> {{ user?.balance }} |</p>
+  <p><label>Bitcoin rate:</label> {{ rate }}</p>
+</section>
+
+<div *ngIf="marketPriceData" class="chart">
+  <h1>{{ marketPriceData.name }}</h1>
+  <p>{{ marketPriceData.description }}</p>
+  <line-chart [chartData]="marketPriceData"></line-chart>
+</div>

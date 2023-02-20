@@ -1,0 +1,24 @@
+<li class="contact-preview">
+  <img
+    [src]="'https://robohash.org/' + contact.name + '?set=set3'"
+    alt="robot contact"
+  />
+  <div class="details">
+    <div class="name">
+      {{ contact.name }}
+    </div>
+    <div class="email">
+      {{ contact.email }}
+    </div>
+    <div class="phone">
+      {{ contact.phone }}
+    </div>
+  </div>
+  <div class="actions">
+    <button [routerLink]="['/contact', contact._id]" class="btn primary">
+      Details
+    </button>
+    <button (click)="onEditContact()" class="btn primary">Edit</button>
+    <button (click)="onDeleteContact()" class="btn secondary">X</button>
+  </div>
+</li>

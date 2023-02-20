@@ -1,0 +1,34 @@
+@import "../../../assets/scss/setup/variables.scss";
+.contact-index {
+  height: 100%;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  .user,
+  .contacts {
+    padding: 2rem;
+    border-radius: 0.3rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin: 2rem;
+  }
+  .user {
+    box-shadow: $light-box-shadow;
+    margin-bottom: unset;
+  }
+  .contacts {
+    color: $clr5;
+    background-color: $clr2;
+    flex-direction: column;
+  }
+  .user {
+    label {
+      font-weight: 600;
+    }
+  }
+}
