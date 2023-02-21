@@ -1,0 +1,44 @@
+.watcher-index {
+}
+
+.watcher-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  padding: 0;
+  margin: 0;
+  margin-top: 1rem;
+  z-index: 1;
+  position: relative;
+}
+
+.watcher {
+  z-index: 1;
+  color: #252525;
+  margin: 1.5em;
+  padding: 1.5em 1em;
+  border-radius: 0.5em;
+  box-shadow: 0px 20px 30px -20px rgb(0 0 0 / 40%);
+  text-align: center;
+  margin-top: 50px;
+  position: relative;
+  img {
+    background: linear-gradient(to top, rgba($clr1, 20%) 00%, white 70%);
+    position: relative;
+    margin-top: -50px;
+    border-radius: 50%;
+  }
+  h3 {
+    font-weight: 500;
+    margin: 1em 0;
+  }
+  hr {
+    opacity: 0.2;
+  }
+  .watcher-btns-wrapper {
+    padding: 1em 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+}

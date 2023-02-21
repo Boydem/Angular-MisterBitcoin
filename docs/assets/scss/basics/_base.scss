@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-weight: normal;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+
+  * {
+    pointer-events: none;
+  }
+}
+
+input {
+  font-family: inherit;
+  text-align: inherit;
+}
+
+// MAC like scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #fff0ea;
+  -webkit-border-radius: 100px;
+  padding: 2px;
+}
+
+::-webkit-scrollbar:hover {
+  background: rgba($clr2-dark, 50%);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background: rgba($clr2-dark, 30%);
+  -webkit-border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+  -webkit-border-radius: 100px;
+}
