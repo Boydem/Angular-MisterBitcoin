@@ -6,17 +6,24 @@
       type="number"
       name="amountToTransact"
       [max]="maxValue"
+      min="0"
       required="true"
       #amountToTransactInput="ngModel"
     />
     <button
-      [disabled]="amountToTransactInput.errors?.['max'] || amountToTransactInput.value <= 0 || !amountToTransactInput.value"
+      [disabled]="amountToTransactInput.errors?.['max'] || amountToTransactInput.errors?.['min'] "
       class="btn primary"
     >
       Send
     </button>
   </div>
-  <p class="errors" *ngIf="amountToTransactInput.errors?.['max']">
-    Value must be less than or equal to {{ maxValue }}
-  </p>
+  <div class="errors">
+    <p *ngIf="amountToTransactInput.errors?.['min']">
+      Value must be bigger than 0
+    </p>
+    <p *ngIf="!maxValue">You have 0 in balance</p>
+    <p *ngIf="amountToTransactInput.errors?.['max'] && maxValue">
+      Value must be less than or equal to {{ maxValue }}
+    </p>
+  </div>
 </form>

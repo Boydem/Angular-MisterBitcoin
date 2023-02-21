@@ -47,6 +47,7 @@ export class UserService {
   addMove(contact: Contact, amountToTransact: number) {
     let loggedInUser = this.storageService.loadFromStorage(this.DB_KEY);
     if (!loggedInUser) return;
+    loggedInUser.balance -= amountToTransact;
     loggedInUser.transactions.push({
       toId: contact._id,
       to: contact.name,

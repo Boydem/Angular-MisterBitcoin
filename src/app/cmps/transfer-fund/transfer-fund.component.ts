@@ -13,7 +13,7 @@ export class TransferFundComponent {
   @Input() contact!: Contact;
   @Input() maxValue!: number;
   transferMoney() {
-    if (this.amountToTransact < this.maxValue) return;
+    if (this.amountToTransact > this.maxValue || !this.amountToTransact) return;
     this.userService.addMove(this.contact, this.amountToTransact);
   }
 }
