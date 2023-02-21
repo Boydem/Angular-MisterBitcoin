@@ -1,6 +1,11 @@
 <section class="contact-index">
   <section class="contacts">
-    <a routerLink="/contact/edit">Add Contact</a>
+    <div class="intro flex align-center">
+      <h1>Contacts</h1>
+      <a class="add-contact-btn btn primary" routerLink="/contact/edit"
+        >Add Contact</a
+      >
+    </div>
     <contact-filter></contact-filter>
     <contact-list
       (deleteContact)="onDeleteContact($event)"

@@ -7,9 +7,10 @@ import {
   Output,
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { lastValueFrom, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { Contact } from 'src/app/models/contact.model';
-import { ContactService } from 'src/app/services/contact.service';
+import { User } from 'src/app/models/user.model';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'contact-details',
@@ -18,30 +19,27 @@ import { ContactService } from 'src/app/services/contact.service';
 })
 export class ContactDetailsComponent implements OnInit, OnDestroy {
   constructor(
-    private contactService: ContactService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private userService: UserService
   ) {}
 
-  contact: Contact | undefined;
+  contact!: Contact;
   subscription!: Subscription;
+  user!: User | null;
 
   async ngOnInit() {
-    this.subscription = this.route.params.subscribe(async (params) => {
-      // Property 'id' comes from an index signature, so it must be accessed with ['id']
-      // const id = params.id // Thats why TS wont allow this
-      const contactId = params['id'];
-      try {
-        // Get the contact from the service with the id
-        const contact = await lastValueFrom(
-          this.contactService.getContactById(contactId)
-        );
-        this.contact = contact;
-      } catch (err) {
-        console.log('err:', err);
-        this.router.navigateByUrl('/contact');
-      }
+    this.subscription = this.route.data.subscribe((data) => {
+      this.contact = data['contact'];
     });
+    try {
+      await this.userService.getLoggedInUser();
+      this.subscription = this.userService.loggedInUser$.subscribe((user) => {
+        this.user = user;
+      });
+    } catch (err) {
+      console.log('err:', err);
+    }
   }
 
   onGoBack(): void {

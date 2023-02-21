@@ -3,19 +3,18 @@
 }
 
 html {
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
-  min-height: 100vh;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 img {
@@ -59,17 +58,18 @@ input {
 // MAC like scrollbar
 ::-webkit-scrollbar {
   width: 8px;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: #fff0ea;
   -webkit-border-radius: 100px;
+  padding: 2px;
 }
 
 ::-webkit-scrollbar:hover {
-  background-color: rgba(0, 0, 0, 0.09);
+  background: rgba($clr2-dark, 50%);
 }
 
 ::-webkit-scrollbar-thumb:vertical {
-  background: rgba(0, 0, 0, 0.5);
-  -webkit-border-radius: 100px;
+  background: rgba($clr2-dark, 30%);
+  -webkit-border-radius: 0px;
 }
 
 ::-webkit-scrollbar-thumb:vertical:active {

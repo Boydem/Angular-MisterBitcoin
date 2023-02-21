@@ -6,21 +6,44 @@ import { ContactIndexComponent } from './pages/contact-index/contact-index.compo
 import { StatsPageComponent } from './pages/stats-page/stats-page.component';
 import { environment } from '../environments/environment.development';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { ContactResolver } from './services/contact.resolver';
+import { AuthGuard } from './guards/auth.guard';
+import { SignupComponent } from './cmps/signup/signup.component';
 
 const routes: Routes = [
   {
     path: 'contact',
     component: ContactIndexComponent,
+    canActivate: [AuthGuard],
     children: [
-      { path: 'edit/:id', component: ContactEditComponent },
-      { path: 'edit', component: ContactEditComponent },
+      {
+        path: 'edit/:id',
+        component: ContactEditComponent,
+        resolve: { contact: ContactResolver },
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'edit',
+        component: ContactEditComponent,
+        canActivate: [AuthGuard],
+      },
     ],
   },
-  { path: 'contact/:id', component: ContactDetailsComponent },
-  { path: 'stats', component: StatsPageComponent },
+  {
+    path: 'contact/:id',
+    component: ContactDetailsComponent,
+    resolve: { contact: ContactResolver },
+    canActivate: [AuthGuard],
+  },
+  { path: 'stats', component: StatsPageComponent, canActivate: [AuthGuard] },
+  {
+    path: 'signup',
+    component: SignupComponent,
+  },
   {
     path: '',
     component: HomePageComponent,
+    canActivate: [AuthGuard],
   },
 ];
 

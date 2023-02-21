@@ -1,0 +1,20 @@
+.transfer-fund {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  label {
+    margin-inline-end: 0.5rem;
+    min-width: max-content;
+    flex: 1;
+  }
+  button {
+    position: absolute;
+    right: 0;
+    transform: translateX(-1.25rem);
+    // height: 100%;
+  }
+}

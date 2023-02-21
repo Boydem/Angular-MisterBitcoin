@@ -1,0 +1,24 @@
+<section class="sign-up">
+  <div class="home-img">
+    <img src="../../../assets/home-currency.png" alt="currency vector" />
+  </div>
+  <div class="intro">
+    <div class="user-message">
+      <h1>Signup</h1>
+      <span class="badge small">
+        <mat-icon>attach_money</mat-icon>And start transfaring money to your
+        contacts!</span
+      >
+    </div>
+    <form (ngSubmit)="onSignUp()" class="signup-form">
+      <label for="userFullName">Full name</label>
+      <input
+        [(ngModel)]="userFullName"
+        type="text"
+        name="userFullName"
+        id="userFullName"
+      />
+      <button class="btn primary">Send</button>
+    </form>
+  </div>
+</section>

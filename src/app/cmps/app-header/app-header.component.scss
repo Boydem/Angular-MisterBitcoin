@@ -4,15 +4,40 @@
   z-index: 2;
   position: sticky;
   top: 0;
-  background-color: $clr2;
+  background-color: #ffffff3b;
+  backdrop-filter: blur(20px);
+
   padding: 1rem 0;
   box-shadow: $light-box-shadow;
-  color: $clr5;
+  color: $clr1;
   header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     .logo {
+      color: $clr2;
+      font-size: 21px;
+      letter-spacing: -1px;
+      position: relative;
+      z-index: 1;
+      &::before {
+        z-index: -1;
+        content: "";
+        width: 16px;
+        height: 16px;
+        border-radius: 16px;
+        position: absolute;
+        background: linear-gradient(
+          50deg,
+          lighten($clr1, 15%),
+          lighten($clr1, 55%)
+        );
+        left: 18px;
+        top: 50%;
+        transform: translate(-200%, -50%);
+        box-shadow: inset 0px 0px 2px 0px #fac05c, 0px 0px 0px 3px #ffc560;
+        opacity: 0.75;
+      }
     }
     nav {
       display: flex;

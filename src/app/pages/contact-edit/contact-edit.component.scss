@@ -8,8 +8,10 @@
   align-items: center;
   justify-content: center;
   background-color: #0000008c;
+  z-index: 99;
 
   .contact-edit {
+    min-width: 400px;
     border-radius: 0.33rem;
     padding: 2.5rem 3rem;
     background-color: #fff;

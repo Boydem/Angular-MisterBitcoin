@@ -2,12 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, tap } from 'rxjs/operators';
 import { lastValueFrom } from 'rxjs';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BitcoinService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private storageService: StorageService
+  ) {}
 
   public getRate() {
     const url = 'https://blockchain.info/tobtc?currency=USD&value=1';
@@ -35,22 +39,12 @@ export class BitcoinService {
   public getConfirmedTransactions() {}
 
   private getResult(type: string, url: string) {
-    const result = loadFromStorage(type);
+    const result = this.storageService.loadFromStorage(type);
     if (result) return Promise.resolve(result);
     return lastValueFrom(
       this.http
         .get<{ answer: string }>(url)
-        .pipe(tap((res) => saveToStorage(type, res)))
+        .pipe(tap((res) => this.storageService.saveToStorage(type, res)))
     );
   }
-}
-
-function saveToStorage(key: string, value: any) {
-  const data: any = JSON.stringify(value) || null;
-  localStorage.setItem(key, data);
-}
-
-function loadFromStorage(key: string) {
-  let data = localStorage.getItem(key);
-  return data ? JSON.parse(data) : undefined;
 }

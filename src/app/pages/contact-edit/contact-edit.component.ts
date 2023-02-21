@@ -20,13 +20,9 @@ export class ContactEditComponent implements OnInit, OnDestroy {
   subscription!: Subscription;
 
   ngOnInit() {
-    this.subscription = this.route.params.subscribe(
-      async ({ id: contactId }) => {
-        this.contact = contactId
-          ? await lastValueFrom(this.contactService.getContactById(contactId))
-          : (this.contact = new Contact());
-      }
-    );
+    this.subscription = this.route.data.subscribe(({ contact }) => {
+      this.contact = contact || new Contact();
+    });
   }
 
   async onAddContact() {

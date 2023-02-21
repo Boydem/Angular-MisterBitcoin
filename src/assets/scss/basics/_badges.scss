@@ -1,0 +1,19 @@
+.badge {
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: $clr2;
+  color: lighten($clr2, 65%);
+  max-width: max-content;
+  display: inline-flex;
+  align-items: center;
+
+  &.small {
+    font-size: 12px;
+  }
+  &.medium {
+    font-size: 14px;
+  }
+  &.large {
+    font-size: 16px;
+  }
+}

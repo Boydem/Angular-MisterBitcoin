@@ -1,8 +1,13 @@
 export interface User {
   _id: string;
   balance: number;
-  transactions: Array<{}>;
-  phone: string;
+  transactions: {
+    amount: number;
+    to: string;
+    toId: string;
+    at: Date | number | string;
+  }[];
+  phone?: string;
   name: string;
-  email: string;
+  email?: string;
 }

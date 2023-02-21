@@ -1,11 +1,24 @@
-<section class="user">
-  <p><label>Username:</label> {{ user?.name }} |</p>
-  <p><label>Balance:</label> {{ user?.balance }} |</p>
-  <p><label>Bitcoin rate:</label> {{ rate }}</p>
-</section>
+<section class="hero">
+  <div class="home-img">
+    <img src="../../../assets/home-currency.png" alt="currency vector" />
+  </div>
+  <div class="intro">
+    <div class="user-details">
+      <h1>Welcome back, {{ user?.name }}</h1>
+      <h4 class="flex align-center">
+        Wallet balance: {{ user?.balance }}
+        <!-- <mat-icon>monetization_on</mat-icon>Wallet balance: {{ user?.balance }} -->
+      </h4>
+      <span class="badge small">
+        <mat-icon>attach_money</mat-icon> Bitcoin rate: {{ rate }}</span
+      >
+    </div>
 
-<div *ngIf="marketPriceData" class="chart">
-  <h1>{{ marketPriceData.name }}</h1>
-  <p>{{ marketPriceData.description }}</p>
-  <line-chart [chartData]="marketPriceData"></line-chart>
-</div>
+    <div *ngIf="marketPriceData" class="chart">
+      <h1>{{ marketPriceData.name }}</h1>
+      <p>{{ marketPriceData.description }}</p>
+      <!-- <p><label>Bitcoin rate:</label> {{ rate }}</p> -->
+      <line-chart [chartData]="marketPriceData"></line-chart>
+    </div>
+  </div>
+</section>

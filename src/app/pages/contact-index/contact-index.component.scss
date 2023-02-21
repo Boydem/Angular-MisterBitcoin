@@ -1,34 +1,41 @@
 @import "../../../assets/scss/setup/variables.scss";
 .contact-index {
+  background-color: #ffffff36;
+  backdrop-filter: blur(5px);
+  margin: 3rem 0;
   height: 100%;
+  width: 100%;
   display: flex;
-
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  flex-wrap: wrap;
-  .user,
+  position: relative;
+  // border: rgba($clr2-dark, 20%) 1px solid;
+  border-radius: 1rem;
+  padding: 3rem;
+  > * {
+    margin-bottom: 3rem;
+  }
+  .intro {
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    h1 {
+      font-weight: 700;
+      line-height: 1;
+      font-size: 58px;
+    }
+    .add-contact-btn {
+    }
+  }
+
   .contacts {
-    padding: 2rem;
-    border-radius: 0.3rem;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    margin: 2rem;
-  }
-  .user {
-    box-shadow: $light-box-shadow;
-    margin-bottom: unset;
-  }
-  .contacts {
-    color: $clr5;
-    background-color: $clr2;
     flex-direction: column;
-  }
-  .user {
-    label {
-      font-weight: 600;
+    gap: 0.5rem;
+    width: 100%;
+
+    h4 {
+      font-weight: 300;
+      font-size: 20px;
     }
   }
 }

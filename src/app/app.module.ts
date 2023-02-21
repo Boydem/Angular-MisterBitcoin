@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -21,6 +22,10 @@ import { ContactEditComponent } from './pages/contact-edit/contact-edit.componen
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { LineChartComponent } from './cmps/line-chart/line-chart.component';
 import { BarChartComponent } from './cmps/bar-chart/bar-chart.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.component';
+import { MoveListComponent } from './cmps/move-list/move-list.component';
+import { SignupComponent } from './cmps/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +41,9 @@ import { BarChartComponent } from './cmps/bar-chart/bar-chart.component';
     AppHeaderComponent,
     LineChartComponent,
     BarChartComponent,
+    TransferFundComponent,
+    MoveListComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +51,8 @@ import { BarChartComponent } from './cmps/bar-chart/bar-chart.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatIconModule,
   ],
   providers: [ContactService, UserService, BitcoinService],
   bootstrap: [AppComponent],
