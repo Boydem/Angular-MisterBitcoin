@@ -1,5 +1,8 @@
 <div *ngIf="user">
-  <ul class="transfer-list" *ngFor="let transfer of user.transactions">
+  <ul
+    class="transfer-list clean-list"
+    *ngFor="let transfer of user.transactions"
+  >
     <li class="transfer-item">
       <p>
         ${{ transfer.amount }} | {{ transfer.to }} |

@@ -3,9 +3,9 @@
 .transfer-fund {
   gap: 0.5rem;
   position: relative;
-  padding: 1rem;
+  padding: 0.75rem calc(0.75rem + 2px);
   background-color: #ffffff;
-  border-radius: 1rem;
+
   div {
     display: flex;
     align-items: center;

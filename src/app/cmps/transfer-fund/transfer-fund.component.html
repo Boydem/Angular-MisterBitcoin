@@ -5,6 +5,7 @@
       [(ngModel)]="amountToTransact"
       type="number"
       name="amountToTransact"
+      id="amountToTransact"
       [max]="maxValue"
       min="0"
       required="true"
@@ -17,7 +18,7 @@
       Send
     </button>
   </div>
-  <div class="errors">
+  <div *ngIf="amountToTransactInput.errors?.['length']" class="errors">
     <p *ngIf="amountToTransactInput.errors?.['min']">
       Value must be bigger than 0
     </p>
