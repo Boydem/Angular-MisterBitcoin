@@ -11,7 +11,9 @@ export class TransferFundComponent {
   constructor(private userService: UserService) {}
   amountToTransact!: number;
   @Input() contact!: Contact;
+  @Input() maxValue!: number;
   transferMoney() {
+    if (this.amountToTransact < this.maxValue) return;
     this.userService.addMove(this.contact, this.amountToTransact);
   }
 }

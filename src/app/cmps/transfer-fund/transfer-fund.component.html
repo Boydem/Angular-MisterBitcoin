@@ -1,10 +1,22 @@
 <form (ngSubmit)="transferMoney()" class="transfer-fund">
-  <label for="amountToTransact">Transfer money</label>
-  <input
-    [(ngModel)]="amountToTransact"
-    type="number"
-    name="amountToTransact"
-    id="amountToTransact"
-  />
-  <button class="btn primary">Send</button>
+  <div>
+    <label for="amountToTransact">Transfer money</label>
+    <input
+      [(ngModel)]="amountToTransact"
+      type="number"
+      name="amountToTransact"
+      [max]="maxValue"
+      required="true"
+      #amountToTransactInput="ngModel"
+    />
+    <button
+      [disabled]="amountToTransactInput.errors?.['max'] || amountToTransactInput.value <= 0 || !amountToTransactInput.value"
+      class="btn primary"
+    >
+      Send
+    </button>
+  </div>
+  <p class="errors" *ngIf="amountToTransactInput.errors?.['max']">
+    Value must be less than or equal to {{ maxValue }}
+  </p>
 </form>
