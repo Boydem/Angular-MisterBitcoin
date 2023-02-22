@@ -2,10 +2,9 @@
 .move-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem 2.5rem;
   align-items: center;
-  margin-inline-start: auto;
-  justify-content: flex-end;
+  justify-content: center;
   .move-item {
     z-index: 9;
     max-width: max-content;

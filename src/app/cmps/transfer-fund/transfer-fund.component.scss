@@ -4,15 +4,19 @@
   gap: 0.5rem;
   position: relative;
   padding: 0.75rem calc(0.75rem + 2px);
-  background-color: #ffffff;
+  background-color: #fff0ea;
   border-radius: 4px;
   div {
     display: flex;
     align-items: center;
     label {
+      font-size: 17px;
       margin-inline-end: 0.5rem;
       min-width: max-content;
       flex: 1;
+    }
+    [name="amountToTransact"] {
+      background-color: #fff;
     }
     button {
       position: absolute;
