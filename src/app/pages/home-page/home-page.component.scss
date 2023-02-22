@@ -36,6 +36,16 @@
     padding: 3rem;
     .user-wallet {
       min-width: max-content;
+      margin-inline-end: 3rem;
+      background-color: $clr2-dark;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      border-bottom: 4px solid $clr2;
+      box-shadow: $medium-box-shadow;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
     .user-details {
       display: flex;
@@ -46,13 +56,14 @@
       h1 {
         font-weight: 700;
         line-height: 1;
-        font-size: 58px;
+        font-size: 48px;
         margin-bottom: 2rem;
       }
       h4 {
         font-weight: 300;
         font-size: 28px;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
+        color: $clr5;
       }
     }
   }
