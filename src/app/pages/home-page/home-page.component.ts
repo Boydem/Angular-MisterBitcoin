@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { User } from 'src/app/models/user.model';
+import { Move, User } from 'src/app/models/user.model';
 import { BitcoinService } from 'src/app/services/bitcoin.service';
 import { UserService } from 'src/app/services/user.service';
 

@@ -40,7 +40,7 @@ export class UserService {
   addMove(contact: Contact, amountToTransact: number) {
     let loggedInUser = this._load();
     loggedInUser.balance -= amountToTransact;
-    loggedInUser.transactions.push({
+    loggedInUser.transactions.unshift({
       toId: contact._id || undefined,
       to: contact.name,
       amount: amountToTransact,

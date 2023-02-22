@@ -38,8 +38,9 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
     this.userSubscription = this.userService.loggedInUser$.subscribe((user) => {
       this.user = user;
       this.moves =
-        this.user?.transactions.filter((t) => t.toId === this.contact._id) ||
-        [];
+        user?.transactions
+          .filter((t) => t.toId === this.contact._id)
+          .slice(0, 6) || [];
     });
   }
 
