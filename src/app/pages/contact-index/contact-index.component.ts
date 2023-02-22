@@ -12,7 +12,6 @@ export class ContactIndexComponent implements OnInit {
   // get contact from service
   constructor(private contactService: ContactService) {}
 
-  contacts!: Contact[];
   contacts$!: Observable<Contact[]>;
 
   ngOnInit(): void {

@@ -4,7 +4,7 @@ export interface User {
   transactions: {
     amount: number;
     to: string;
-    toId: string;
+    toId: string | undefined;
     at: Date | number | string;
   }[];
   phone?: string;

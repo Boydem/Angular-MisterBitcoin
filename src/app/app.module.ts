@@ -21,7 +21,6 @@ import { ContactPreviewComponent } from './cmps/contact-preview/contact-preview.
 import { ContactEditComponent } from './pages/contact-edit/contact-edit.component';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { LineChartComponent } from './cmps/line-chart/line-chart.component';
-import { BarChartComponent } from './cmps/bar-chart/bar-chart.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.component';
 import { MoveListComponent } from './cmps/move-list/move-list.component';
@@ -40,7 +39,6 @@ import { SignupComponent } from './cmps/signup/signup.component';
     HomePageComponent,
     AppHeaderComponent,
     LineChartComponent,
-    BarChartComponent,
     TransferFundComponent,
     MoveListComponent,
     SignupComponent,

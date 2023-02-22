@@ -20,23 +20,15 @@ export class UserService {
   private _loggedInUser$ = new BehaviorSubject<User | null>(null);
   public loggedInUser$ = this._loggedInUser$.asObservable();
 
-  public getLoggedInUser(): void {
-    let loggedInUser!: User;
-    loggedInUser = this.storageService.loadFromStorage(this.DB_KEY);
-    if (!loggedInUser) {
-      loggedInUser = {
-        _id: 'u101',
-        name: 'Srulik Johanson',
-        balance: 200,
-        transactions: [],
-      };
-    }
+  public getLoggedInUser(): User {
+    let loggedInUser = this._load();
     this._save(loggedInUser);
+    return loggedInUser;
   }
 
   signup(name: string): void {
     const newUser: User = {
-      _id: 'u102',
+      _id: this.makeId(),
       name,
       balance: 200,
       transactions: [],
@@ -45,16 +37,19 @@ export class UserService {
   }
 
   addMove(contact: Contact, amountToTransact: number) {
-    let loggedInUser = this.storageService.loadFromStorage(this.DB_KEY);
-    if (!loggedInUser) return;
+    let loggedInUser = this._load();
     loggedInUser.balance -= amountToTransact;
     loggedInUser.transactions.push({
-      toId: contact._id,
+      toId: contact._id || undefined,
       to: contact.name,
       amount: amountToTransact,
       at: Date.now(),
     });
     this._save(loggedInUser);
+  }
+
+  private _load(): User {
+    return this.storageService.loadFromStorage(this.DB_KEY);
   }
 
   private _save(user: User) {
@@ -68,5 +63,17 @@ export class UserService {
     );
     if (!loggedInUser) return false;
     return true;
+  }
+
+  private makeId(length = 5) {
+    var text = '';
+    var possible =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    for (var i = 0; i < length; i++) {
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+    return text;
   }
 }

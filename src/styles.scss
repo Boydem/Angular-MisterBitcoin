@@ -63,7 +63,7 @@ $mister-bitcoin-theme: mat.define-light-theme(
   );
   background-attachment: scroll;
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   flex-direction: column;
   position: relative;
   z-index: 0;
