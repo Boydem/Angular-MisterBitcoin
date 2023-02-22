@@ -12,3 +12,10 @@
 //     src: url(../../fonts/OpenSans-Regular.ttf);
 //     font-family: OpenSans;
 // }
+
+h1,
+h2,
+h3,
+h4 {
+  color: darken($clr2-dark, 10%);
+}
