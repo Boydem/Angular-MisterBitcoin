@@ -34,22 +34,25 @@
     border: rgba($clr2-dark, 20%) 1px solid;
     border-radius: 1rem;
     padding: 3rem;
-
+    .user-wallet {
+      min-width: max-content;
+    }
     .user-details {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
       padding: 0 1rem 3rem;
       border-bottom: 1px solid rgba(0, 0, 0, 0.278);
-      margin-bottom: 2rem;
       h1 {
         font-weight: 700;
         line-height: 1;
         font-size: 58px;
+        margin-bottom: 2rem;
       }
       h4 {
         font-weight: 300;
-        font-size: 20px;
+        font-size: 28px;
+        margin-bottom: 1rem;
       }
     }
   }

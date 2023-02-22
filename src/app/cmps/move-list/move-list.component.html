@@ -1,10 +1,14 @@
 <div *ngIf="moves">
-  <ul class="transfer-list clean-list" *ngFor="let move of moves">
-    <li class="transfer-item">
-      <p>
-        ${{ move.amount }} | {{ move.to }} |
-        {{ move.at | date : "dd/MM/yy hh:mm" }}
-      </p>
+  <ul class="move-list clean-list">
+    <li class="move-item" *ngFor="let move of moves">
+      <div class="amount">
+        <div class="icon-size">
+          <mat-icon [inline]="true" [fontIcon]="'currency_bitcoin'"></mat-icon>
+        </div>
+        <span>{{ move.amount }}</span>
+      </div>
+      <h5 class="name">To: {{ move.to }}</h5>
+      <h5 class="date">At: {{ move.at | date : "dd/MM/yy hh:mm" }}</h5>
     </li>
   </ul>
 </div>

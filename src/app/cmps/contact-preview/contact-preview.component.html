@@ -16,13 +16,19 @@
   </div>
   <div class="actions">
     <button [routerLink]="['/contact', contact._id]" class="btn primary">
-      <mat-icon> <span class="small-icon"> visibility </span> </mat-icon>
+      <span class="small-icon">
+        <mat-icon [inline]="true"> visibility </mat-icon></span
+      >
     </button>
     <button (click)="onEditContact()" class="btn primary">
-      <mat-icon><span class="small-icon"> mode_edit </span></mat-icon>
+      <span class="small-icon">
+        <mat-icon [inline]="true"> mode_edit </mat-icon></span
+      >
     </button>
     <button (click)="onDeleteContact()" class="btn secondary">
-      <mat-icon> <span class="small-icon"> remove_circle </span></mat-icon>
+      <span class="small-icon">
+        <mat-icon [inline]="true"> remove_circle </mat-icon></span
+      >
     </button>
   </div>
 </li>

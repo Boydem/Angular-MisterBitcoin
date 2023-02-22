@@ -12,7 +12,8 @@
   background-color: #fff0ea;
 
   &:hover .actions {
-    transition: 0.3s all $ease-in-out-expo;
+    transform: translateX(0);
+    transition: 0.4s all $ease-in-out-quart;
     opacity: 1;
   }
   img {
@@ -25,7 +26,8 @@
     margin-bottom: 1rem;
   }
   .actions {
-    transition: 0.3s all $ease-in-out-expo;
+    transform: translateX(-8px);
+    transition: 0.4s all $ease-in-out-quart;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -46,13 +48,14 @@
       &:not(:last-child) {
         margin-bottom: 0.5rem;
       }
-      .mat-icon {
+      .i {
         display: flex;
         align-items: center;
         justify-content: center;
       }
       .small-icon {
         font-size: 16px;
+        display: flex;
       }
     }
   }

@@ -5,20 +5,20 @@
   <div class="intro">
     <div *ngIf="user" class="user-details">
       <h1>Welcome back, {{ user.name }}</h1>
-      <h4 class="flex align-center">
-        Wallet balance: {{ user.balance }}
-        <!-- <mat-icon>monetization_on</mat-icon>Wallet balance: {{ user?.balance }} -->
-      </h4>
-      <span class="badge small">
-        <mat-icon>attach_money</mat-icon> Bitcoin rate: {{ rate }}</span
-      >
-      <move-list *ngIf="moves.length" [moves]="moves"></move-list>
+      <div class="flex">
+        <div class="user-wallet">
+          <h4 class="flex align-center">Balance: {{ user.balance }}</h4>
+          <span class="badge small">
+            <mat-icon>attach_money</mat-icon> Bitcoin rate: {{ rate }}</span
+          >
+        </div>
+        <move-list *ngIf="moves.length" [moves]="moves"></move-list>
+      </div>
     </div>
 
     <div *ngIf="marketPriceData" class="chart">
       <h1>{{ marketPriceData.name }}</h1>
       <p>{{ marketPriceData.description }}</p>
-      <!-- <p><label>Bitcoin rate:</label> {{ rate }}</p> -->
       <line-chart [chartData]="marketPriceData"></line-chart>
     </div>
   </div>
