@@ -12,7 +12,7 @@
       <span class="badge small">
         <mat-icon>attach_money</mat-icon> Bitcoin rate: {{ rate }}</span
       >
-      <move-list [moves]="user.transactions"></move-list>
+      <move-list *ngIf="moves.length" [moves]="moves"></move-list>
     </div>
 
     <div *ngIf="marketPriceData" class="chart">

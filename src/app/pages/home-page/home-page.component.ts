@@ -21,6 +21,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   };
   user!: User | null;
   rate!: number;
+  moves: Move[] = [];
 
   subscription!: Subscription;
 
@@ -28,6 +29,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     this.userService.getLoggedInUser();
     this.subscription = this.userService.loggedInUser$.subscribe((user) => {
       this.user = user;
+      this.moves = user?.transactions.slice(0, 5) || [];
     });
 
     try {

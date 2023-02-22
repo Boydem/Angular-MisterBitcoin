@@ -40,7 +40,7 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
       this.moves =
         user?.transactions
           .filter((t) => t.toId === this.contact._id)
-          .slice(0, 6) || [];
+          .slice(0, 5) || [];
     });
   }
 
