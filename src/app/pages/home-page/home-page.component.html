@@ -3,10 +3,10 @@
     <img src="./assets/home-currency.png" alt="currency vector" />
   </div>
   <div class="intro">
-    <div class="user-details">
-      <h1>Welcome back, {{ user?.name }}</h1>
+    <div *ngIf="user" class="user-details">
+      <h1>Welcome back, {{ user.name }}</h1>
       <h4 class="flex align-center">
-        Wallet balance: {{ user?.balance }}
+        Wallet balance: {{ user.balance }}
         <!-- <mat-icon>monetization_on</mat-icon>Wallet balance: {{ user?.balance }} -->
       </h4>
       <span class="badge small">

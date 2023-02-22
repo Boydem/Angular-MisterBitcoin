@@ -1,12 +1,9 @@
-<div *ngIf="user">
-  <ul
-    class="transfer-list clean-list"
-    *ngFor="let transfer of user.transactions"
-  >
+<div *ngIf="moves">
+  <ul class="transfer-list clean-list" *ngFor="let move of moves">
     <li class="transfer-item">
       <p>
-        ${{ transfer.amount }} | {{ transfer.to }} |
-        {{ transfer.at | date : "dd/MM/yy hh:mm" }}
+        ${{ move.amount }} | {{ move.to }} |
+        {{ move.at | date : "dd/MM/yy hh:mm" }}
       </p>
     </li>
   </ul>

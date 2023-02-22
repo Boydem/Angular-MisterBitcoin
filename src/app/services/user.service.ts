@@ -5,6 +5,8 @@ import {
   of,
   throwError,
   lastValueFrom,
+  map,
+  tap,
 } from 'rxjs';
 import { Contact } from '../models/contact.model';
 import { User } from '../models/user.model';
@@ -20,10 +22,9 @@ export class UserService {
   private _loggedInUser$ = new BehaviorSubject<User | null>(null);
   public loggedInUser$ = this._loggedInUser$.asObservable();
 
-  public getLoggedInUser(): User {
+  public getLoggedInUser() {
     let loggedInUser = this._load();
     this._save(loggedInUser);
-    return loggedInUser;
   }
 
   signup(name: string): void {

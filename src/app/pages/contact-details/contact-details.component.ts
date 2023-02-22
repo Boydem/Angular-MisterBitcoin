@@ -9,7 +9,7 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Contact } from 'src/app/models/contact.model';
-import { User } from 'src/app/models/user.model';
+import { Move, User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -25,21 +25,22 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
   ) {}
 
   contact!: Contact;
-  subscription!: Subscription;
+  contactSubscription!: Subscription;
+  userSubscription!: Subscription;
   user!: User | null;
+  moves: Move[] = [];
 
-  async ngOnInit() {
-    this.subscription = this.route.data.subscribe((data) => {
+  ngOnInit() {
+    this.contactSubscription = this.route.data.subscribe((data) => {
       this.contact = data['contact'];
     });
-    try {
-      await this.userService.getLoggedInUser();
-      this.subscription = this.userService.loggedInUser$.subscribe((user) => {
-        this.user = user;
-      });
-    } catch (err) {
-      console.log('err:', err);
-    }
+    this.userService.getLoggedInUser();
+    this.userSubscription = this.userService.loggedInUser$.subscribe((user) => {
+      this.user = user;
+      this.moves =
+        this.user?.transactions.filter((t) => t.toId === this.contact._id) ||
+        [];
+    });
   }
 
   onGoBack(): void {
@@ -47,6 +48,7 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.contactSubscription.unsubscribe();
+    this.userSubscription.unsubscribe();
   }
 }

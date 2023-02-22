@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { User } from 'src/app/models/user.model';
 import { BitcoinService } from 'src/app/services/bitcoin.service';
 import { UserService } from 'src/app/services/user.service';
@@ -8,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent implements OnInit, OnDestroy {
   constructor(
     private userService: UserService,
     private bitcoinService: BitcoinService
@@ -21,9 +22,11 @@ export class HomePageComponent implements OnInit {
   user!: User | null;
   rate!: number;
 
+  subscription!: Subscription;
+
   async ngOnInit() {
     this.userService.getLoggedInUser();
-    this.userService.loggedInUser$.subscribe((user) => {
+    this.subscription = this.userService.loggedInUser$.subscribe((user) => {
       this.user = user;
     });
 
@@ -33,5 +36,9 @@ export class HomePageComponent implements OnInit {
     } catch (err) {
       console.log('err:', err);
     }
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

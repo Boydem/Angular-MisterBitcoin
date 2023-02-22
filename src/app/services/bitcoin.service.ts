@@ -20,7 +20,7 @@ export class BitcoinService {
 
   public getMarketPrice() {
     const url =
-      'https://api.blockchain.info/charts/market-price?timespan=5months&format=json&cors=true';
+      'https://api.blockchain.info/charts/market-price?timespan=1months&format=json&cors=true';
     return this.getResult('MARKET_PRICE', url);
   }
 

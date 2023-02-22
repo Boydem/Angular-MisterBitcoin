@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user.model';
+import { Move, User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -9,6 +9,6 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class MoveListComponent implements OnInit {
   constructor(private userService: UserService) {}
-  @Input() user!: User | null;
+  @Input() moves!: Move[] | undefined;
   ngOnInit(): void {}
 }
