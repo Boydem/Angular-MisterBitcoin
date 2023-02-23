@@ -45,7 +45,8 @@ Follow this steps:
 - #### Start the application
 ```ng serve```
 
-#### Navigate to http://localhost:4200 in your web browser to view the application
+- #### Navigate to http://localhost:4200 in your web browser to view the application
+
 or [View the app in GithubPages](https://boydem.github.io/Angular-MisterBitcoin/#/)
 
 ## Screenshots
