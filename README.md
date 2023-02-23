@@ -55,7 +55,7 @@ or [View the app in GithubPages](https://boydem.github.io/Angular-MisterBitcoin/
 <img src="https://res.cloudinary.com/dsperrtyj/image/upload/v1677145869/bitcoin-signup_imbpop.jpg" title="signup page">
 
 ### Contact Page
-<img src="https://res.cloudinary.com/dsperrtyj/image/upload/v1677145869/bitcoin-contact_nkqcbp.png" title="signup page">
+<img src="https://res.cloudinary.com/dsperrtyj/image/upload/v1677145869/bitcoin-contact_nkqcbp.png" title="contact">
 
 ## Conclusion
 I hope you find this Angular Bitcoin wallet application useful and informative. If you have any questions or feedback, please don't hesitate to reach out. Happy coding! :smile:
