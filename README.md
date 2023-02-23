@@ -36,13 +36,13 @@ I liked working with Angular in this project because:
 
 ## Getting started
 Follow this steps:
-#### Clone the repository
+- #### Clone the repository
 ```git clone https://github.com/Boydem/Angular-MisterBitcoin.git```
 
-#### Install dependencies
+- #### Install dependencies
 ```npm install```
 
-#### Start the application
+- #### Start the application
 ```ng serve```
 
 #### Navigate to http://localhost:4200 in your web browser to view the application
