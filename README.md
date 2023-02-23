@@ -1,5 +1,7 @@
 # Angular App: Bitcoin Wallet
 
+[View the app yourself in GithubPages](https://boydem.github.io/Angular-MisterBitcoin/#/)
+
 This project is part of an Angular workshop at CodingAcademy. This application is a simple Bitcoin wallet that allows users to sign up, view their balance and transaction history, and manage their contacts.
 
 <img src="https://res.cloudinary.com/dsperrtyj/image/upload/v1677145870/bitcoin-home_asuffj.png" title="home page">
