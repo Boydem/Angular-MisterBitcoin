@@ -1,27 +1,29 @@
-# MisterBitcoin
+# Welcome to the Angular App:
+Bitcoin Wallet repository! This project is part of an Angular workshop at CodingAcademy. This application is a simple Bitcoin wallet that allows users to sign up, view their balance and transaction history, and manage their contacts.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+## Pages
+The application has two main pages:
 
-## Development server
+## Home page:
+Users must first sign up to access this page. Once logged in, users can view their current Bitcoin balance, market prices charts, and transaction history.
+Contacts page: Users can view, add, edit, and remove their contacts. They can also transfer Bitcoin to their contacts.
+Technologies Used
+This project is built using Angular and the Chart.js library. Full CRUD functionality is implemented in the contacts page.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Developing with Angular
+I liked working with Angular in this project because:
 
-## Code scaffolding
+- Angular provides a more structured approach to developing applications with its use of modules
+- Angular's dependency injection system makes it easy to develop and test applications
+- Angular's two-way data binding and change detection system provides a fast and responsive user interface.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
+To get started with this project, simply clone the repository and run npm install to install the necessary dependencies. Then, run ng serve to start the application. You can then navigate to http://localhost:4200 to view the application.
 
-## Build
+## Screenshots
+Home Page
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Contacts Page
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Conclusion
+I hope you find this Angular Bitcoin wallet application useful and informative. If you have any questions or feedback, please don't hesitate to reach out. Happy coding! :smile:
