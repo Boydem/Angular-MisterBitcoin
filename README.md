@@ -34,8 +34,18 @@ I liked working with Angular in this project because:
 - Angular's dependency injection system makes it easy to develop and test applications
 - Angular's two-way data binding and change detection system provides a fast and responsive user interface.
 
-## Getting Started
-To get started with this project, simply clone the repository and run `npm install` to install the necessary dependencies. Then, run `ng serve` to start the application. You can then navigate to http://localhost:4200 to view the application.
+## Getting started
+
+### Clone the repository
+```git clone https://github.com/Boydem/Angular-MisterBitcoin.git```
+
+### Install dependencies
+```npm install```
+
+### Start the application
+```ng serve```
+
+### Navigate to http://localhost:4200 in your web browser to view the application
 
 ## Screenshots
 
