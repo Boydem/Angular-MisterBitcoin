@@ -2,6 +2,8 @@
 
 This project is part of an Angular workshop at CodingAcademy. This application is a simple Bitcoin wallet that allows users to sign up, view their balance and transaction history, and manage their contacts.
 
+<img src="https://res.cloudinary.com/dsperrtyj/image/upload/v1677145870/bitcoin-home_asuffj.png" title="home page">
+
 ### Table of Contents
 - [Pages](#pages)
 - [Technologies Used](#technologies-used)
@@ -34,9 +36,12 @@ I liked working with Angular in this project because:
 To get started with this project, simply clone the repository and run `npm install` to install the necessary dependencies. Then, run `ng serve` to start the application. You can then navigate to http://localhost:4200 to view the application.
 
 ## Screenshots
-### Home Page
 
-### Contacts Page
+### Signup
+<img src="https://res.cloudinary.com/dsperrtyj/image/upload/v1677145869/bitcoin-signup_imbpop.jpg" title="signup page">
+
+### Contact Page
+<img src="https://res.cloudinary.com/dsperrtyj/image/upload/v1677145869/bitcoin-contact_nkqcbp.png" title="signup page">
 
 ## Conclusion
 I hope you find this Angular Bitcoin wallet application useful and informative. If you have any questions or feedback, please don't hesitate to reach out. Happy coding! :smile:
