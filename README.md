@@ -35,17 +35,18 @@ I liked working with Angular in this project because:
 - Angular's two-way data binding and change detection system provides a fast and responsive user interface.
 
 ## Getting started
-
-### Clone the repository
+Follow this steps:
+#### Clone the repository
 ```git clone https://github.com/Boydem/Angular-MisterBitcoin.git```
 
-### Install dependencies
+#### Install dependencies
 ```npm install```
 
-### Start the application
+#### Start the application
 ```ng serve```
 
-### Navigate to http://localhost:4200 in your web browser to view the application
+#### Navigate to http://localhost:4200 in your web browser to view the application
+or [View the app in GithubPages](https://boydem.github.io/Angular-MisterBitcoin/#/)
 
 ## Screenshots
 
